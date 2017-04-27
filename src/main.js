@@ -27,10 +27,11 @@ new Vue({
   components: { App }
 })
 
-var html = document.getElementsByTagName('html')[0];
-var w = document.documentElement.clientWidth || document.body.clientWidth;
-html.style.fontSize = w / 750 + "px";
+// var html = document.getElementsByTagName('html')[0];
+// var w = document.documentElement.clientWidth || document.body.clientWidth;
+// html.style.fontSize = w / 750 + "px";
 
+//防止数据刷新 登录状态丢失
  var user = window.sessionStorage.getItem('userAccount');
  if(user){
  	store.dispatch('userInfo', user);

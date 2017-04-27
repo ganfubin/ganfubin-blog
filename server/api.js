@@ -1,8 +1,10 @@
-// 可能是我的node版本问题，不用严格模式使用ES6语法会报错
 "use strict";
 const models = require('./db');
 const express = require('express');
 const router = express.Router();
+
+const login = require('./api/login');
+login.Api(router);
 
 /************** 创建(create) 读取(get) 更新(update) 删除(delete) **************/
 
