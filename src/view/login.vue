@@ -20,68 +20,69 @@
     import utilDom from 'utils/dom.js';
     import utilWab from 'utils/webapp.js';
     export default {
-    data() {
-        return {
-          form: {
-            account: '',
-            password: ''
-          },
-          loginBg: {background: "url(" + require('assets/img/login-bg.jpg') + ") no-repeat 100% 100%"},
-          rules: {
-            account: [
-              { required: true, message: '账号不能为空', trigger: 'blur' }
-            ],
-            password: [
-              { required: true, message: '密码不能为空', trigger: 'blur' }
-            ]
-          }
-        }
-    },
-    mounted: function(){
-        this.$nextTick( () => {
-               var $dom = $(this.$refs.login);
-               this.$dom = $dom;
-               this.initBgHeight($dom);
-            })
-        
-    },
-    methods:{
-        initBgHeight: function($dom){
-          utilDom.setModuleHeight($dom, 'height');
-        },
-        login: function(){
-          // 获取已有账号密码
-          var _vm = this;
-          let params = { 
-                account : _vm.form.account,
-                password : _vm.form.password
-              };
-
-          if(params.account == '' || params.password == ''){
-              console.log('账号密码不能为空==== 暂时没有做验证');
-              return false;
-
-          }
-          utilWab.ajax({
-            url:'/api/login/findAccount/'+params.account +'/'+ params.password,
-            type: 'GET',
-            success: function(result){
-              if(result.status == 200){
-                var data = result.data || [];
-                  if(data.length){
-                    data = data[0] || {};
-                    window.sessionStorage.setItem('userAccount', data.account)
-                    _vm.$store.dispatch('userInfo', data.account);
-                    _vm.$router.go(-1);
-                  }
-              }
-              
+      name: 'login',
+      data() {
+          return {
+            form: {
+              account: '',
+              password: ''
             },
-            error: function(result){
-              console.log(result);
+            loginBg: {background: "url(" + require('assets/img/login-bg.jpg') + ") no-repeat 100% 100%"},
+            rules: {
+              account: [
+                { required: true, message: '账号不能为空', trigger: 'blur' }
+              ],
+              password: [
+                { required: true, message: '密码不能为空', trigger: 'blur' }
+              ]
             }
-          });
-        }
+          }
+      },
+      mounted: function(){
+          this.$nextTick( () => {
+                 var $dom = $(this.$refs.login);
+                 this.$dom = $dom;
+                 this.initBgHeight($dom);
+              })
+          
+      },
+      methods:{
+          initBgHeight: function($dom){
+            utilDom.setModuleHeight($dom, 'height');
+          },
+          login: function(){
+            // 获取已有账号密码
+            var _vm = this;
+            let params = { 
+                  account : _vm.form.account,
+                  password : _vm.form.password
+                };
+
+            if(params.account == '' || params.password == ''){
+                console.log('账号密码不能为空==== 暂时没有做验证');
+                return false;
+
+            }
+            utilWab.ajax({
+              url:'/api/login/findAccount/'+params.account +'/'+ params.password,
+              type: 'GET',
+              success: function(result){
+                if(result.status == 200){
+                  var data = result.data || [];
+                    if(data.length){
+                      data = data[0] || {};
+                      window.sessionStorage.setItem('userAccount', data.account)
+                      _vm.$store.dispatch('userInfo', data.account);
+                      _vm.$router.go(-1);
+                    }
+                }
+                
+              },
+              error: function(result){
+                console.log(result);
+              }
+            });
+          }
       }
     }
 </script>

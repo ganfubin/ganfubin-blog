@@ -8,10 +8,19 @@ var router = new Router({
 	routes: [
 	    {
 		    path: '/',
+			redirect: '/home',
+			component(resolve) {
+		      require.ensure(['view/home'], () => {
+		          resolve(require('view/home'));
+		      });
+		    }
+	    },
+	    {
+		    path: '/home',
 			name: 'Home',
 			component(resolve) {
-		      require.ensure(['view/Hello'], () => {
-		          resolve(require('view/Hello'));
+		      require.ensure(['view/home'], () => {
+		          resolve(require('view/home'));
 		      });
 		    }
 	    },

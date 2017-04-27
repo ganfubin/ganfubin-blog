@@ -36,10 +36,3 @@ new Vue({
  if(user){
  	store.dispatch('userInfo', user);
  }
- //跨域请求测试
-//  $.ajax({
-// 	url: 'http://localhost:8088/api/login/getAccount',
-// 		success: function(data){
-// 		console.log(data);
-// 	}
-// });

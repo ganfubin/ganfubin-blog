@@ -32,7 +32,10 @@
 <style lang='scss'>
     /*项目后面可能会用到其他插件的sass文件*/
     @import '~element-ui/lib/theme-default/index.css';
+    /* pc 端样式重置*/
     @import '~element-ui/lib/theme-default/reset.css';
+    /* 移动端样式重置*/
+    @import 'assets/style/_mobile-rest.scss';
     /*index中不包含reset样式*/
     /*@import './assets/theme/index.css';*/
 
@@ -58,5 +61,3 @@
         padding-top: 44px;
     }
 </style>
-
-
