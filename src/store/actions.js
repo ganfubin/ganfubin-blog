@@ -7,5 +7,8 @@ export default {
 	},
 	userInfo: ({ commit }, account) => {
 		 commit('userInfo', account);
+	},
+	loadingToggle: ({ commit }, type) => {
+		commit('loadingToggle', type);
 	}
 }

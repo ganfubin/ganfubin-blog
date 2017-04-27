@@ -7,5 +7,8 @@ export default {
     },
     userInfo: (state) => {
         return state.userInfo;
+    },
+    loadingToggle: (state) =>{
+    	return state.loadingToggle;
     }
 }

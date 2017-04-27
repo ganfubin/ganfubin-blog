@@ -5,10 +5,6 @@ h1,h2,h3,h4,h5,h6{font-size:100%;}
 input,textarea{-webkit-user-select:text;-ms-user-select:text;user-select:text;-webkit-appearance:none;font-size:1em;line-height:1.5em;}
 table{border-collapse:collapse;}
 input,select,textarea{outline:none;border:none;background:none;}
-a{outline:0;cursor:pointer;*star:expression(this.onbanner=this.blur());}
-a:link,a:active{text-decoration:none;}
-a:visited{text-decoration:none;}
-a:hover{color:#f00;text-decoration:underline;}
 a{text-decoration:none;-webkit-touch-callout:none;}
 em,i{font-style:normal;}
 li,ol{list-style:none;}

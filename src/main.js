@@ -16,7 +16,8 @@ Vue.use(VueResource);
 Vue.use(ElementUI);
 
 
-Vue.config.productionTip = true
+Vue.config.productionTip = false;
+Vue.config.debug = true;
 
 /* eslint-disable no-new */
 new Vue({

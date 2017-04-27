@@ -3,7 +3,8 @@ import getters from './getters';
 const state = {
     menuState: false,
     title: '首页',
-    userInfo: ''
+    userInfo: '',
+    loadingToggle: false
 };
 
 
@@ -16,6 +17,9 @@ const mutations = {
     },
     userInfo(state, account){
         state.userInfo = account;
+    },
+    loadingToggle(state, type){
+         state.loadingToggle = type;
     }
 };
 export default {

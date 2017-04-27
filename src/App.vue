@@ -1,7 +1,7 @@
 <template>
     <div id="app">
         <cmptHeader></cmptHeader>
-        <div id="page-container" calss="wrapper">
+        <div id="page-container" calss="wrapper" v-if="hidden">
             <cmptMenu :showMenu="false"></cmptMenu>
             <div class="page-wrapper">
                 <keep-alive>
@@ -9,7 +9,11 @@
                 </keep-alive>
             </div>
         </div> 
-         <cmptFooter></cmptFooter>
+         <cmptFooter v-if="hidden"></cmptFooter>
+         <RingLoader :loading="loading" :color="color" :size="size" v-if="!hidden" class="loading">
+             <p class="loadText" v-if="!hidden">loading</p>
+         </RingLoader>
+         
     </div>
     
 </template>
@@ -17,15 +21,33 @@
     import cmptHeader from './components/header.vue';
     import cmptMenu from './components/menu.vue';
     import cmptFooter from './components/footer.vue';
+    import RingLoader from 'vue-spinner/src/ClipLoader.vue'
     export default {
         name: 'app',
         data() {
-            return {}
+            return {
+                color: '#03a9f4',
+                size: '4rem',
+                loading: true,
+                hidden: false
+            }
+        },
+        computed: {
+            hidden: function(){
+                return this.$store.getters.loadingToggle;
+            }
+        },
+        mounted: function() {
+            var _vm = this;
+            setTimeout(function() {
+                _vm.hidden = true
+            }, 2000)
         },
         components: {
             cmptHeader,
             cmptMenu,
-            cmptFooter
+            cmptFooter,
+            RingLoader
         }
     }
 </script>
@@ -59,5 +81,15 @@
     }
     #page-container{
         padding-top: 44px;
+    }
+    .loading{
+        text-align: center;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        right: 0;
+        z-index: 10;
+        background: transparent;
+        margin-top: -2rem;
     }
 </style>
