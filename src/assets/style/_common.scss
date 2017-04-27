@@ -1,0 +1,334 @@
+/* 
+该文件主要写项目用到的基础类 
+mag
+pad
+border
+...
+*/
+@import '_setting.scss';
+
+html,body {
+    width: 100%;
+    height: 100%;
+}
+
+iframe {
+    width: 100%;
+    border: none;
+}
+
+
+/*======================
+    ------ 定位 ------
+  ======================*/
+
+.absolute {
+    position: absolute;
+}
+
+.relative {
+    position: relative;
+}
+
+.z-index-top {
+    z-index: 100;
+}
+
+.z-index-bottom {
+    z-index: -10;
+}
+
+
+/*-- 清除浮动 --*/
+
+.clearfix:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+
+.text-center {
+    text-align: center;
+}
+
+
+/*======================
+    ------ 颜色 ------
+  ======================*/
+
+.white-bg {
+    background-color: #fff;
+}
+
+.grey-bg {
+    background-color: #f8f8f8;
+}
+
+
+/* 文本换行 */
+
+.word-break {
+    word-break: break-all;
+}
+
+
+/* 块级文字缩略 */
+
+.text-overflow-ellipsis {
+    word-break: keep-all;
+    white-space: nowrap;
+    overflow: hidden;
+    -webkit-text-overflow: ellipsis;
+    -ms-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    vertical-align: bottom;
+}
+
+.text-overflow-ellipsis.show-ellipsis:hover,
+dt.show-ellipsis:hover,
+dd.show-ellipsis:hover {
+    overflow: visible;
+    text-overflow: inherit;
+}
+
+
+/* 禁止选中文本 */
+
+.cannt-select {
+    /*火狐*/
+    -moz-user-select: none;
+    /*webkit浏览器*/
+    -webkit-user-select: none;
+    /*IE10*/
+    -ms-user-select: none;
+    /*早期浏览器*/
+    -khtml-user-select: none;
+    user-select: none;
+}
+
+
+/*=============================
+    ------ 边框、内外边距 ------
+
+ 边距 xs表示5 sm表示10 没有大小表示15
+  =============================*/
+
+
+/* 边框 */
+
+.bord-no {
+    border: 0 !important;
+}
+
+.bord-all {
+    border: 1px solid $baseBorderColor  !important;
+}
+
+.bord-top {
+    border-top: 1px solid $baseBorderColor  !important;
+}
+
+.bord-top-no {
+    border-top: none !important;
+}
+
+.bord-btm {
+    border-bottom: 1px solid $baseBorderColor  !important;
+}
+
+.bord-lft {
+    border-left: 1px solid $baseBorderColor  !important;
+}
+
+.bord-rgt {
+    border-right: 1px solid $baseBorderColor  !important;
+}
+
+.bord-ver {
+    border-top: 1px solid $baseBorderColor  !important;
+    border-bottom: 1px solid $baseBorderColor  !important;
+}
+
+.bord-hor {
+    border-right: 1px solid $baseBorderColor  !important;
+    border-left: 1px solid $baseBorderColor  !important;
+}
+
+
+/* 外边距 */
+
+.mg-no {
+    margin: 0 !important;
+}
+
+.mg-all {
+    margin: 15px !important;
+}
+.mg-all-sm {
+    margin: 10px !important;
+}
+.mg-all-xs {
+    margin: 5px !important;
+}
+
+.mg-top {
+    margin-top: 15px !important;
+}
+
+.mg-top-no {
+    margin-top: 0 !important;
+}
+
+.mg-btm {
+    margin-bottom: 15px !important;
+}
+.mg-btm-sm {
+    margin-bottom: 10px !important;
+}
+.mg-btm-xs {
+    margin-bottom: 5px !important;
+}
+
+.mg-lft {
+    margin-left: 15px !important;
+}
+
+.mg-lft-sm {
+    margin-left: 10px !important;
+}
+
+.mg-lft-xs {
+    margin-left: 5px !important;
+}
+
+
+.mg-rgt {
+    margin-right: 15px !important;
+}
+.mg-rgt-sm {
+    margin-right: 10px !important;
+}
+
+.mg-rgt-xs {
+    margin-right: 5px !important;
+}
+
+.mg-hor {
+    margin-left: 15px !important;
+    margin-right: 15px !important;
+}
+.mg-hor-sm {
+    margin-left: 10px !important;
+    margin-right: 10px !important;
+}
+.mg-hor-xs {
+    margin-left: 5px !important;
+    margin-right: 5px !important;
+}
+
+.mg-ver {
+    margin-top: 15px !important;
+    margin-bottom: 15px !important;
+}
+.mg-ver-sm {
+    margin-top: 10px !important;
+    margin-bottom: 10px !important;
+}
+.mg-ver-xs {
+    margin-top: 5px !important;
+    margin-bottom: 5px !important;
+}
+
+
+
+
+/* 内边距 */
+
+.pd-no {
+    padding: 0 !important;
+}
+
+.pd-all {
+    padding: 15px !important;
+}
+.pd-all-sm {
+    padding: 10px !important;
+}
+.pd-all-xs {
+    padding: 5px !important;
+}
+
+.pd-top {
+    padding-top: 15px !important;
+}
+.pd-top-sm {
+    padding-top: 10px !important;
+}
+.pd-top-xs {
+    padding-top: 5px !important;
+}
+.pd-btm-no {
+    padding-bottom: 0 !important;
+}
+.pd-btm {
+    padding-bottom: 15px !important;
+}
+.pd-btm-sm {
+    padding-bottom: 10px !important;
+}
+.pd-btm-xs {
+    padding-bottom: 5px !important;
+}
+
+.pd-lft {
+    padding-left: 15px !important;
+}
+.pd-lft-sm {
+    padding-left: 10px !important;
+}
+.pd-lft-xs {
+    padding-left: 5px !important;
+}
+
+.pd-rgt {
+    padding-right: 15px !important;
+}
+.pd-rgt-sm {
+    padding-right: 10px !important;
+}
+.pd-rgt-xs {
+    padding-right: 5px !important;
+}
+
+.pd-rgt-no {
+    padding-right: 0 !important;
+}
+
+.pd-hor {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+}
+.pd-hor-sm {
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+}
+.pd-hor-xs {
+    padding-left: 5px !important;
+    padding-right: 5px !important;
+}
+
+.pd-ver {
+    padding-top: 15px !important;
+    padding-bottom: 15px !important;
+}
+.pd-ver-sm {
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+}
+.pd-ver-xs {
+    padding-top: 5px !important;
+    padding-bottom: 5px !important;
+}
