@@ -1,5 +1,5 @@
-# blog
-
+# A Vue.js project
+#项目涉及到mogondb 数据库 目前只有登录模块有使用到接口
 > A Vue.js project
 
 ## Build Setup
