@@ -4,16 +4,30 @@ import Vue from 'vue';
 import App from './App';
 import router from './router';
 import store from './store/';
-
-
-import VueResource from 'vue-resource';
-import ElementUI from 'element-ui';
-// import iView from 'iview';
 import Vuex from 'vuex';
 
 
-Vue.use(VueResource);
+//用于过滤
+import filter from 'filter/index.js';
+Vue.use(filter);
+
+//用于http
+import http from 'http/index.js';
+Vue.use(http);
+
+//用于指令
+import directive from 'directive/index.js';
+Vue.use(directive);
+
+
+import ElementUI from 'element-ui';
 Vue.use(ElementUI);
+
+
+
+
+
+
 
 
 Vue.config.productionTip = false;
