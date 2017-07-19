@@ -1,6 +1,7 @@
 <template>
-  <div class="pd-all">    
-  	home
+  <div class="pd-all">
+  	<div @click="testToast">home</div> 
+  	
   </div>
 </template>
 
@@ -13,6 +14,9 @@
 	        }
 	    },
 	    methods:{
+	    	testToast(){
+	    		this.$toast('test');
+	    	}
 	    }
     }
 </script>

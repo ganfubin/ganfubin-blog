@@ -8,16 +8,20 @@ import Vuex from 'vuex';
 
 
 //用于过滤
-import filter from 'filter/index.js';
+import filter from './filter/index.js';
 Vue.use(filter);
 
 //用于http
-import http from 'http/index.js';
+import http from './http/index.js';
 Vue.use(http);
 
 //用于指令
-import directive from 'directive/index.js';
+import directive from './directive/index.js';
 Vue.use(directive);
+
+//用于指令
+import vueextend from './utils/vue-extend.js';
+Vue.use(vueextend);
 
 
 import ElementUI from 'element-ui';

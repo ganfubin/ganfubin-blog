@@ -1,7 +1,6 @@
 //包引入
 import axios from 'axios';
 import qs from 'qs';
-import cache from 'utils/cache';
 
 axios.defaults.timeout = 5000;
 process.env.NODE_ENV == 'production' && (axios.defaults.baseURL = '');
@@ -60,6 +59,8 @@ var http = {
 	}
 }
 
-exports.install = function (Vue, options) { 
-    Vue.prototype.$http = http
+export default {
+	install: function(Vue, option){
+		Vue.prototype.$http = http;
+	}
 }
